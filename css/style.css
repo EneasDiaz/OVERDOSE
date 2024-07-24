@@ -73,7 +73,6 @@ a {
 
 .group {
     position: relative;
-    margin-left: 5px;
 }
 
 .input {
@@ -226,7 +225,7 @@ a {
 
 :root {
     --marquee-width: 100vw;
-    --marquee-height: 30vw;
+    --marquee-height: 50vh;
     /* --marquee-elements: 12; */
     --marquee-elements-displayed: 3;
     --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
@@ -316,87 +315,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-
-}
-
-.card {
-    margin: 20px;
-    width: 300px;
-    perspective: 1000px;
-    border: 0;
-    border-radius: 10px;
-}
-
-.card-inner {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.55s;
-}
-
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-
-.card-front>img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.card-back>img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-
-
-.card-front {
-    background-color: #6A2C70;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border: 10px solid #6A2C70;
-    border-radius: 10px;
-    justify-content: center;
-    font-size: 24px;
-    transform: rotateY(0deg);
-}
-
-
-
-.card-back {
-    background-color: #F08A5D;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border: 10px solid #F08A5D;
-    border-radius: 10px;
-    justify-content: center;
-    font-size: 24px;
-    transform: rotateY(180deg);
-}
-
-
-.card-content {
-    margin-top: 20px;
-    text-align: center;
-    width: 100%;
-}
-
-.card-content p {
-    margin: 5px 0;
+    gap: 15px;
 }
 
 /* INDEX */
@@ -417,6 +336,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
 }
 
 .card {
@@ -433,8 +353,7 @@ a {
     flex-direction: column;
     gap: 0.75rem;
     padding: 1rem;
-    width: 25rem;
-
+    width: 400px;
 }
 
 .image_container {
@@ -592,6 +511,7 @@ footer>p {
     color: white;
     font-family: 'Point';
     font-size: 20px;
+    padding-bottom: 10px;
     margin-bottom: 0;
 }
 
@@ -627,10 +547,6 @@ footer>p {
     margin-bottom: 45px;
 }
 
-.formdiv>i {
-    color: white;
-}
-
 .redes {
     display: flex;
     flex-direction: row;
@@ -656,6 +572,7 @@ footer>p {
 }
 
 .redes>a>i {
+    color: white;
     font-size: 45px;
 }
 
@@ -863,21 +780,21 @@ footer>p {
     }
     .navbar-nav{
         margin-top: 15px;
-        margin-left: 10px;
-        margin-right: 10px!important;
+        margin-left: 30px;
+        margin-right: 30px!important;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 25px;
     }
-    .nav-item{
-        margin: auto;
-    }
+    
     .navbar-collapse>div{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin-left: 25px;
+        margin-right: 20px!important;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -890,11 +807,67 @@ footer>p {
     }
 }
 
+@media (max-width: 879px){
+    .card{
+        width: 300px!important;
+    }
+    .image_container{
+        height: 336px;
+    }
+}
 
-@media (max-width: 600px) {
+@media (max-width: 780px){
+    .redes{
+        gap: 20px;
+    }
+    .redes>a>i {
+        font-size: 35px;
+    }
+    .formdiv>.mb-3{
+        width: 75%;
+    }
+}
+
+@media (max-width: 690px) {
+    :root {
+        --marquee-elements-displayed: 2;
+    }
     .marquee:before,
     .marquee:after {
         width: 5rem;
+    }
+    .redes{
+        gap: 15px;
+    }
+    .redes>a{
+        width: 130px;
+        font-size:15px ;
+    }
+    .redes>a>i {
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    :root {
+        --marquee-elements-displayed: 1.5;
+    }
+    .marquee:before,
+    .marquee:after {
+        width: 2.5rem;
+    }
+    footer>div>div>a>i {
+        font-size: 20px;
+    }
+    footer>p{
+        font-size: 15px;
+    }
+    .select {
+        gap:15px
+    }
+    .redes{
+        gap: 0px;
     }
 }
 
